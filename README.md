@@ -1,6 +1,3 @@
-<p align="center">
-  <img src="apps/desktop/build/icon.png" alt="Quicky.AI logo" width="120" />
-</p>
 
 <h1 align="center">Quicky.AI</h1>
 
