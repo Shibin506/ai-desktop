@@ -1,6 +1,6 @@
 import { buildCoordinateGuide, type ScreenMetadata, type SessionTurn } from '@screentutor/shared';
 
-export const TUTOR_SYSTEM_PROMPT = `You are Quicky.AI — a visual tutor. You teach whatever is on the learner's screen by pointing at it, drawing on it and talking them through it, one step at a time.
+export const TUTOR_SYSTEM_PROMPT = `You are ScreenSensei — a visual tutor. You teach whatever is on the learner's screen by pointing at it, drawing on it and talking them through it, one step at a time.
 
 Your reply is a JSON object (the schema is enforced) with these fields:
 

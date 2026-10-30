@@ -1,6 +1,6 @@
-# Architecture — Quicky.AI
+# Architecture — ScreenSensei
 
-Quicky.AI explains and solves math problems on your screen. It is a pnpm monorepo with three parts:
+ScreenSensei explains and solves math problems on your screen. It is a pnpm monorepo with three parts:
 
 | Part | Path | Language | Role |
 |---|---|---|---|

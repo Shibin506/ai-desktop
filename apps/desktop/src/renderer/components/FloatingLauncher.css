@@ -34,20 +34,20 @@
  * Do NOT flex-center children here — that double-centered the launcher
  * when combined with half-size offsets (Part 2.7 screenshot: +27,+27).
  */
-.quicke-launcher-stage {
+.sensei-launcher-stage {
   position: relative;
   width: 0;
   height: 0;
   overflow: visible;
 }
 
-.floating-launcher.has-arc-layout .quicke-launcher-stage {
+.floating-launcher.has-arc-layout .sensei-launcher-stage {
   position: absolute;
   /* left/top set inline from arcLayout.launcherOffset (= screen center of metal) */
   transform: none;
 }
 
-.floating-launcher.is-canvas-open:not(.has-arc-layout) .quicke-launcher-stage {
+.floating-launcher.is-canvas-open:not(.has-arc-layout) .sensei-launcher-stage {
   position: relative;
   width: 0;
   height: 0;
@@ -80,7 +80,7 @@
 }
 
 .floating-launcher,
-.quicke-launcher-stage {
+.sensei-launcher-stage {
   -webkit-app-region: no-drag;
   app-region: no-drag;
 }

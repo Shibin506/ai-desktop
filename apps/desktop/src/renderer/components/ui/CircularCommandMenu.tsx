@@ -40,7 +40,7 @@ const EXIT_TWEEN = {
 const STAGGER_S = 0.015;
 
 /**
- * Quicky.AI frosted command actions — PLUS or fan layout.
+ * ScreenSensei frosted command actions — PLUS or fan layout.
  * Parent owns Electron bounds lifecycle; this component only animates items.
  */
 export default function CircularCommandMenu({
@@ -119,7 +119,7 @@ export default function CircularCommandMenu({
 
   return (
     <div
-      className="quicke-cmd-menu"
+      className="sensei-cmd-menu"
       role="menu"
       aria-labelledby={labelledBy}
       aria-hidden={!open}
@@ -141,7 +141,7 @@ export default function CircularCommandMenu({
                 key={item.id}
                 type="button"
                 role="menuitem"
-                className={`quicke-cmd-item ${selected ? 'is-selected' : ''}`}
+                className={`sensei-cmd-item ${selected ? 'is-selected' : ''}`}
                 initial={reduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.78, x: 0, y: 0 }}
                 animate={{ opacity: 1, scale: 1, x, y }}
                 exit={
@@ -172,7 +172,7 @@ export default function CircularCommandMenu({
                   activate(item);
                 }}
               >
-                <span className="quicke-cmd-item__icon" aria-hidden="true">
+                <span className="sensei-cmd-item__icon" aria-hidden="true">
                   {item.icon}
                 </span>
               </motion.button>

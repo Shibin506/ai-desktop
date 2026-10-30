@@ -8,10 +8,10 @@ const __dirname = dirname(__filename);
 
 /**
  * Load development credentials from the monorepo `.env`.
- * Optional QUICKY_ENV_FILE override for local tooling — never baked into bundles.
+ * Optional SENSEI_ENV_FILE override for local tooling — never baked into bundles.
  */
 const envCandidates = [
-  process.env.QUICKY_ENV_FILE,
+  process.env.SENSEI_ENV_FILE,
   resolve(__dirname, '../../../.env'),
   resolve(process.cwd(), '.env'),
 ].filter((p): p is string => typeof p === 'string' && p.length > 0);

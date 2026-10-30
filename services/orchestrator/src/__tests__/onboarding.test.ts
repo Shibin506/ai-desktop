@@ -19,9 +19,9 @@ import {
 const DESKTOP_ROOT = join(__dirname, '../../../../apps/desktop');
 
 describe('onboarding preference contract', () => {
-  it('uses the versioned quicky_onboarding_v1 key', () => {
-    expect(ONBOARDING_STORAGE_KEY).toBe('quicky_onboarding_v1');
-    expect(ONBOARDING_SESSION_AUTO_KEY).toBe('quicky_onboarding_v1_session_auto');
+  it('uses the versioned screensensei_onboarding_v1 key', () => {
+    expect(ONBOARDING_STORAGE_KEY).toBe('screensensei_onboarding_v1');
+    expect(ONBOARDING_SESSION_AUTO_KEY).toBe('screensensei_onboarding_v1_session_auto');
   });
 
   it('treats missing storage as never shown', () => {
@@ -82,7 +82,7 @@ describe('onboarding app wiring', () => {
   it('keeps buddy App free of BrowserWindow and preserves reset helper', () => {
     const appSrc = readFileSync(join(DESKTOP_ROOT, 'src/renderer/App.tsx'), 'utf8');
     expect(appSrc).toContain('placeTutorPanel');
-    expect(appSrc).toContain('__quickyResetOnboarding');
+    expect(appSrc).toContain('__screensenseiResetOnboarding');
     expect(appSrc).toContain("host === 'localhost'");
     expect(appSrc).not.toContain('new BrowserWindow');
     expect(appSrc).toContain('WelcomeOnboarding');
@@ -106,7 +106,7 @@ describe('onboarding app wiring', () => {
     expect(preload).not.toContain('welcomeStartLearning');
   });
 
-  it('embedded Welcome onboarding uses Quicky.AI SEE/EXPLAIN/GUIDE', () => {
+  it('embedded Welcome onboarding uses ScreenSensei SEE/EXPLAIN/GUIDE', () => {
     const welcome = readFileSync(
       join(DESKTOP_ROOT, 'src/renderer/components/WelcomeOnboarding.tsx'),
       'utf8'
@@ -115,6 +115,6 @@ describe('onboarding app wiring', () => {
     expect(welcome).toContain('SEE');
     expect(welcome).toContain('EXPLAIN');
     expect(welcome).toContain('GUIDE');
-    expect(welcome).not.toMatch(/Quicke\.AI|ScreenTutor/);
+    expect(welcome).not.toMatch(/ScreenTutor/);
   });
 });

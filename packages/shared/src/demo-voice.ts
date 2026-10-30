@@ -1,5 +1,5 @@
 /**
- * Quicky.AI Demo Voice mode (Part 6.6.5).
+ * ScreenSensei Demo Voice mode (Part 6.6.5).
  *
  * Isolated, reversible hackathon switch: simulates ONLY the listening /
  * recognition stage. Screen capture, Claude tutoring, Cartesia TTS, and

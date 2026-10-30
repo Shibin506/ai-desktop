@@ -1,5 +1,5 @@
 /**
- * Pure Voice interaction helpers for Quicky.AI (Part 6.6 / 6.6.2).
+ * Pure Voice interaction helpers for ScreenSensei (Part 6.6 / 6.6.2).
  * Click Voice → listen → transcript → Chat processing → teach when first step ready.
  * Escape stops the active phase without resuming late work.
  */
@@ -124,14 +124,14 @@ export function reduceCartesiaTurnEvent(
 }
 
 /** Electron accelerators (macOS Cmd / Windows Ctrl). */
-export const QUICKY_HOTKEY_VOICE = 'CommandOrControl+Alt+1';
-export const QUICKY_HOTKEY_CAPTURE = 'CommandOrControl+Alt+2';
-export const QUICKY_HOTKEY_TEXT = 'CommandOrControl+Alt+3';
+export const SENSEI_HOTKEY_VOICE = 'CommandOrControl+Alt+1';
+export const SENSEI_HOTKEY_CAPTURE = 'CommandOrControl+Alt+2';
+export const SENSEI_HOTKEY_TEXT = 'CommandOrControl+Alt+3';
 /** Fallback Stop when temporary Escape registration fails. */
-export const QUICKY_HOTKEY_STOP_FALLBACK = 'CommandOrControl+Alt+0';
-export const QUICKY_HOTKEY_ESCAPE = 'Escape';
+export const SENSEI_HOTKEY_STOP_FALLBACK = 'CommandOrControl+Alt+0';
+export const SENSEI_HOTKEY_ESCAPE = 'Escape';
 
-export type QuickyHotkeyAction = 'voice' | 'capture' | 'text' | 'stop';
+export type SenseiHotkeyAction = 'voice' | 'capture' | 'text' | 'stop';
 
 export function hotkeyLabel(accelerator: string, platform: 'darwin' | 'win32' | string): string {
   const isMac = platform === 'darwin';

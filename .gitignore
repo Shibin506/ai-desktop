@@ -6,7 +6,7 @@ out/
 .env
 *.log
 *.mp4
-quicky.env
+screensensei.env
 
 .convex-tmp/
 .bench/

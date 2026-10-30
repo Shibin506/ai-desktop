@@ -26,7 +26,7 @@ export interface LiquidMetalButtonProps {
 }
 
 /**
- * Quicky.AI liquid-metal disc. Visual-only — the parent `FloatingLauncher` owns
+ * ScreenSensei liquid-metal disc. Visual-only — the parent `FloatingLauncher` owns
  * the single `<button>` so we never nest interactive controls.
  */
 export default function LiquidMetalButton({
@@ -114,7 +114,7 @@ export default function LiquidMetalButton({
         mountRef.current = mount;
         setShaderFailed(false);
       } catch (err) {
-        console.error('[Quicky.AI] Liquid metal shader failed to initialize:', err);
+        console.error('[ScreenSensei] Liquid metal shader failed to initialize:', err);
         setShaderFailed(true);
         mountRef.current = null;
       }
@@ -140,7 +140,7 @@ export default function LiquidMetalButton({
 
   return (
     <span
-      className={`quicke-liquid-metal ${useFallback ? 'is-fallback' : ''} ${showActivity ? 'is-active' : ''} ${className}`}
+      className={`sensei-liquid-metal ${useFallback ? 'is-fallback' : ''} ${showActivity ? 'is-active' : ''} ${className}`}
       style={{ width: size, height: size }}
       onMouseEnter={() => setSpeed(HOVER_SPEED)}
       onMouseLeave={() => setSpeed(IDLE_SPEED)}
@@ -148,10 +148,10 @@ export default function LiquidMetalButton({
       onMouseUp={() => setSpeed(HOVER_SPEED)}
       aria-hidden="true"
     >
-      <span className="quicke-liquid-metal__rim" />
-      {!useFallback && <div ref={hostRef} className="quicke-liquid-metal__shader" />}
-      {useFallback && <span className="quicke-liquid-metal__fallback" />}
-      <span className="quicke-liquid-metal__glyph">
+      <span className="sensei-liquid-metal__rim" />
+      {!useFallback && <div ref={hostRef} className="sensei-liquid-metal__shader" />}
+      {useFallback && <span className="sensei-liquid-metal__fallback" />}
+      <span className="sensei-liquid-metal__glyph">
         <svg viewBox="0 0 24 24" width="42%" height="42%" aria-hidden="true">
           <circle cx="12" cy="12" r="7.25" fill="none" stroke="currentColor" strokeWidth="1.6" />
           <path

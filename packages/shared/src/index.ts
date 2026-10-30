@@ -1,5 +1,5 @@
 // @screentutor/shared — central type and schema barrel export
-// User-facing product name: Quicky.AI (see brand.ts). Package scope stays @screentutor/*.
+// User-facing product name: ScreenSensei (see brand.ts). Package scope stays @screentutor/*.
 
 export * from './brand.js';
 export * from './onboarding.js';

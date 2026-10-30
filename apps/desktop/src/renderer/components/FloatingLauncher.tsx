@@ -63,7 +63,7 @@ interface Props {
 }
 
 /**
- * Quicky.AI floating launcher.
+ * ScreenSensei floating launcher.
  * Menu open/close uses an explicit phase machine so Electron bounds and
  * Framer Motion exit never race (stage offset held through closing).
  */
@@ -187,7 +187,7 @@ export default function FloatingLauncher({
     if (process.env.NODE_ENV !== 'production') {
       const screenX = applied.x + layout.launcherOffset.x;
       const screenY = applied.y + layout.launcherOffset.y;
-      console.info('[Quicky.AI][launcher-pin]', {
+      console.info('[ScreenSensei][launcher-pin]', {
         anchor: bounds.anchor,
         window: { x: applied.x, y: applied.y, width: applied.width, height: applied.height },
         offset: layout.launcherOffset,
@@ -320,7 +320,7 @@ export default function FloatingLauncher({
           (Math.abs(applied.width - layout.window.width) > 2 ||
             Math.abs(applied.height - layout.window.height) > 2)
         ) {
-          console.warn('[Quicke] menu bounds mismatch', applied, layout.window);
+          console.warn('[ScreenSensei] menu bounds mismatch', applied, layout.window);
         }
       } else {
         window.electronAPI.setMainSizeAtAnchor?.(layout.window.width, layout.window.height);
@@ -345,7 +345,7 @@ export default function FloatingLauncher({
 
   beginOpenRef.current = beginOpen;
 
-  /** Silent post-settle measurement for DevTools: window.__quickeLastAlign */
+  /** Silent post-settle measurement for DevTools: window.__senseiLastAlign */
   useEffect(() => {
     if (phase !== 'open' || !arcLayout || isExpanded) return;
 
@@ -354,7 +354,7 @@ export default function FloatingLauncher({
       const trigger = triggerRef.current;
       if (!stage || !trigger) return;
 
-      const actionNodes = stage.querySelectorAll<HTMLElement>('.quicke-cmd-item');
+      const actionNodes = stage.querySelectorAll<HTMLElement>('.sensei-cmd-item');
       if (actionNodes.length < 4) return;
 
       const report = measurePlusAlignment(
@@ -367,9 +367,9 @@ export default function FloatingLauncher({
 
       (
         window as Window & {
-          __quickeLastAlign?: ReturnType<typeof measurePlusAlignment>;
+          __senseiLastAlign?: ReturnType<typeof measurePlusAlignment>;
         }
-      ).__quickeLastAlign = report;
+      ).__senseiLastAlign = report;
     }, 450);
 
     return () => window.clearTimeout(timer);
@@ -585,7 +585,7 @@ export default function FloatingLauncher({
       // If Chat claimed the window meanwhile, do not shrink over placeTutorPanel.
       if (isExpanded) return;
       if (!pin && process.env.NODE_ENV !== 'production') {
-        console.info('[Quicky.AI][voice-pin-drop]', { hadOffset: offset });
+        console.info('[ScreenSensei][voice-pin-drop]', { hadOffset: offset });
       }
     });
   }, [isRecordingVoice, canvasControlsOpen, isExpanded, canvasOffset, pinWindowToLauncherAnchor]);
@@ -617,7 +617,7 @@ export default function FloatingLauncher({
     <div
       className={`floating-launcher no-drag ${fillWindow ? 'is-menu-open' : ''} ${canvasControlsOpen ? 'is-canvas-open' : ''} ${holdStage || pinStage ? 'has-arc-layout' : ''}`}
     >
-      <div className="quicke-launcher-stage" ref={stageRef} style={stageStyle}>
+      <div className="sensei-launcher-stage" ref={stageRef} style={stageStyle}>
         <CircularCommandMenu
           open={showItems}
           items={items}
@@ -651,15 +651,15 @@ export default function FloatingLauncher({
         {canvasControlsOpen && canvasOffset && !isExpanded && (
           <div
             ref={canvasSheetRef}
-            className="quicke-canvas-sheet"
+            className="sensei-canvas-sheet"
             role="dialog"
             aria-label="Canvas controls"
             style={canvasSheetStyle}
           >
-            <p className="quicke-canvas-sheet__title">Canvas</p>
+            <p className="sensei-canvas-sheet__title">Canvas</p>
             <button
               type="button"
-              className="quicke-canvas-sheet__btn"
+              className="sensei-canvas-sheet__btn"
               onClick={() => {
                 onClearAnnotations();
                 setCanvasOffset(null);
@@ -671,7 +671,7 @@ export default function FloatingLauncher({
             </button>
             <button
               type="button"
-              className="quicke-canvas-sheet__btn"
+              className="sensei-canvas-sheet__btn"
               onClick={() => {
                 setCanvasOffset(null);
                 onCanvasControlsClose();
@@ -687,7 +687,7 @@ export default function FloatingLauncher({
         {voiceListenStage && (
           <div
             ref={canvasSheetRef}
-            className="quicke-listen-pill"
+            className="sensei-listen-pill"
             role="status"
             aria-live="polite"
             aria-label="Listening. Press Escape to cancel."
@@ -697,22 +697,22 @@ export default function FloatingLauncher({
               height: VOICE_LISTEN_PILL_SIZE.height,
             }}
           >
-            <span className="quicke-listen-pill__mic" aria-hidden="true">
+            <span className="sensei-listen-pill__mic" aria-hidden="true">
               <MicIcon />
             </span>
-            <span className="quicke-listen-pill__label">{demoVoiceListenLabel(demoVoiceMode)}</span>
-            <span className="quicke-listen-pill__wave" aria-hidden="true">
+            <span className="sensei-listen-pill__label">{demoVoiceListenLabel(demoVoiceMode)}</span>
+            <span className="sensei-listen-pill__wave" aria-hidden="true">
               <i />
               <i />
               <i />
               <i />
             </span>
-            <span className="quicke-listen-pill__esc">Esc</span>
+            <span className="sensei-listen-pill__esc">Esc</span>
           </div>
         )}
 
         {voicePreviewHint && isExpanded && (
-          <p className="quicke-voice-preview-hint" role="status">
+          <p className="sensei-voice-preview-hint" role="status">
             {voicePreviewHint}
           </p>
         )}

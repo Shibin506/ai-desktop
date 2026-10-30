@@ -72,7 +72,7 @@ interface Props {
   isSelectingRegion?: boolean;
   onStartRegionSelect?: () => Promise<void>;
   onClearRegion?: () => void;
-  /** Increment to focus the question input (Quicky.AI Text action). */
+  /** Increment to focus the question input (ScreenSensei Text action). */
   focusInputToken?: number;
   /** A guided lesson is waiting for the learner to do `awaiting` */
   guided?: { awaiting: string; onNext: () => void; onEnd: () => void } | null;

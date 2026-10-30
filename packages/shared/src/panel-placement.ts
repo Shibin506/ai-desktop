@@ -1,5 +1,5 @@
 /**
- * Pure geometry for placing the Quicky.AI tutor panel near the floating launcher.
+ * Pure geometry for placing the ScreenSensei tutor panel near the floating launcher.
  * Screen/work-area coordinates are device-independent (Electron CSS pixels).
  */
 

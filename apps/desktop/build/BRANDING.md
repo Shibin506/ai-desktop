@@ -1,6 +1,6 @@
-# Quicky.AI native icons
+# ScreenSensei native icons
 
-**Master (untouched):** repository root `Quicky Logo.png` (2048×2048 RGBA).
+**Master (untouched):** repository root `ScreenSensei Logo.png` (2048×2048 RGBA).
 
 **Derived assets in this folder (do not treat as editable vectors):**
 

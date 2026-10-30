@@ -1,5 +1,5 @@
 /**
- * Pure helpers for Quicky.AI Voice STT audio encoding (Part 6.6.4).
+ * Pure helpers for ScreenSensei Voice STT audio encoding (Part 6.6.4).
  * No DOM / WebSocket dependencies — unit-testable.
  */
 

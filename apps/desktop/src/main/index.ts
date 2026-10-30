@@ -29,7 +29,7 @@ import {
   unregisterActionShortcuts,
   setEscapeActivityActive,
 } from './action-shortcuts.js';
-import type { QuickyHotkeyAction } from '@screentutor/shared';
+import type { SenseiHotkeyAction } from '@screentutor/shared';
 import { isMac } from './platform.js';
 import { ensureMicrophone, getPermissionStatus, openPermissionSettings, type PermissionKind } from './permissions.js';
 import * as Sentry from '@sentry/node';
@@ -39,15 +39,15 @@ import { initSentry } from './sentry.js';
 initSentry();
 
 /**
- * Official display name is Quicky.AI. Lock userData to the existing
+ * Official display name is ScreenSensei. Lock userData to the existing
  * `@screentutor/desktop` directory BEFORE setName so preferences / session
  * storage are not orphaned by the rebrand.
  *
- * Test / private-demo override: QUICKY_USER_DATA_DIR or --user-data-dir=…
+ * Test / private-demo override: SENSEI_USER_DATA_DIR or --user-data-dir=…
  * (never used for normal installs).
  */
 function resolveUserDataPath(): string {
-  const envOverride = process.env.QUICKY_USER_DATA_DIR?.trim();
+  const envOverride = process.env.SENSEI_USER_DATA_DIR?.trim();
   if (envOverride) return envOverride;
   const arg = process.argv.find((a) => a.startsWith('--user-data-dir='));
   if (arg) return arg.slice('--user-data-dir='.length);
@@ -57,7 +57,7 @@ app.setPath('userData', resolveUserDataPath());
 app.setName(PRODUCT_DISPLAY_NAME);
 
 /**
- * One Quicky.AI desktop process at a time.
+ * One ScreenSensei desktop process at a time.
  * Duplicate `pnpm dev` / leftover Electron mains were rendering two visible launchers.
  */
 const gotSingleInstanceLock = app.requestSingleInstanceLock();
@@ -80,7 +80,7 @@ function applyNativeAppIcon() {
   const iconPath = resolveAppIconPath();
   const image = nativeImage.createFromPath(iconPath);
   if (image.isEmpty()) {
-    console.warn('[Main] Quicky.AI icon missing or unreadable:', iconPath);
+    console.warn('[Main] ScreenSensei icon missing or unreadable:', iconPath);
     return null;
   }
   if (isMac && app.dock) {
@@ -298,7 +298,7 @@ function notifyHoldDictationEnd() {
   }
 }
 
-function notifyActionHotkey(action: QuickyHotkeyAction) {
+function notifyActionHotkey(action: SenseiHotkeyAction) {
   if (mainWindow && !mainWindow.isDestroyed()) {
     raiseMainWindow(false);
     mainWindow.webContents.send('onActionHotkey', action);

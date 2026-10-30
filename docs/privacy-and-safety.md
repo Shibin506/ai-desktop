@@ -1,6 +1,6 @@
-# Privacy & Safety — Quicky.AI
+# Privacy & Safety — ScreenSensei
 
-Quicky.AI is a privacy-first tutoring application. Privacy rules are not just a matter of policy; they are strictly enforced by software constraints at every layer.
+ScreenSensei is a privacy-first tutoring application. Privacy rules are not just a matter of policy; they are strictly enforced by software constraints at every layer.
 
 ---
 
@@ -72,7 +72,7 @@ Quicky.AI is a privacy-first tutoring application. Privacy rules are not just a 
 
 ## 6. Action Safety & Approval Policy
 
-**Rule:** Quicky.AI will never execute desktop actions automatically.
+**Rule:** ScreenSensei will never execute desktop actions automatically.
 - **Explicit User Approval**: Every proposed click or keystroke appears as a card in the UI showing risk levels, descriptions, and coordinates. The user must click **Approve** to run it.
 - **Global Safety Gate**: Any proposed actions containing file deletions (`rm`, `delete`), terminal executions (`bash`, `powershell`), transactions (`buy`, `checkout`), or communications (`send`, `email`) are blocked from appearing in the UI.
 

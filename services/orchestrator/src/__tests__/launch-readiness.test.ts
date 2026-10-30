@@ -60,18 +60,18 @@ describe('onboarding reset preserves unrelated preferences', () => {
       unrelated_demo_key: 'keep-me',
     });
     const session = memoryStore({
-      quicky_onboarding_v1_session_auto: '1',
+      screensensei_onboarding_v1_session_auto: '1',
     });
 
     resetOnboardingKeysOnly(local, session);
 
     expect(local.getItem(ONBOARDING_STORAGE_KEY)).toBeNull();
-    expect(session.getItem('quicky_onboarding_v1_session_auto')).toBeNull();
+    expect(session.getItem('screensensei_onboarding_v1_session_auto')).toBeNull();
     expect(local.getItem(MUTE_STORAGE_KEY)).toBe('true');
     expect(local.getItem('unrelated_demo_key')).toBe('keep-me');
     expect(ONBOARDING_RESET_KEYS).toEqual([
-      'quicky_onboarding_v1',
-      'quicky_onboarding_v1_session_auto',
+      'screensensei_onboarding_v1',
+      'screensensei_onboarding_v1_session_auto',
     ]);
     expect(isOnboardingResetKey(MUTE_STORAGE_KEY)).toBe(false);
   });
@@ -121,7 +121,7 @@ describe('desktop wiring — startup mic + voice path', () => {
 
   it('dev onboarding reset is localhost-gated and does not clear all storage', () => {
     const app = readFileSync(join(DESKTOP, 'src/renderer/App.tsx'), 'utf8');
-    expect(app).toContain('__quickyResetOnboarding');
+    expect(app).toContain('__screensenseiResetOnboarding');
     expect(app).toContain("host === 'localhost'");
     expect(app).not.toContain('localStorage.clear(');
     const storage = readFileSync(join(DESKTOP, 'src/renderer/onboardingStorage.ts'), 'utf8');

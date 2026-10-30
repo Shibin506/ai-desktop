@@ -1,5 +1,5 @@
 /**
- * Pure presentation helpers for Quicky.AI tutor-panel processing / handoff UI.
+ * Pure presentation helpers for ScreenSensei tutor-panel processing / handoff UI.
  * Labels map to real ChatTurn.aiPhase values — no synthetic phases.
  */
 

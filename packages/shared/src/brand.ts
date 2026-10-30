@@ -1,5 +1,5 @@
 /**
- * Official Quicky.AI product identity.
+ * Official ScreenSensei product identity.
  *
  * Display name is user-facing. Internal package / IPC / storage IDs may still
  * use legacy `screentutor` identifiers for compatibility — do not rename those
@@ -7,10 +7,10 @@
  */
 
 /** Exact user-facing product name (spelling is intentional). */
-export const PRODUCT_DISPLAY_NAME = 'Quicky.AI' as const;
+export const PRODUCT_DISPLAY_NAME = 'ScreenSensei' as const;
 
 /** Short spoken / aria-friendly form without the domain-style suffix. */
-export const PRODUCT_SHORT_NAME = 'Quicky' as const;
+export const PRODUCT_SHORT_NAME = 'Sensei' as const;
 
 /**
  * Stable Electron / package-derived userData folder segment.

@@ -1,5 +1,5 @@
 /**
- * Pure geometry + style constants for Quicky.AI on-screen teaching pointers.
+ * Pure geometry + style constants for ScreenSensei on-screen teaching pointers.
  * Placement prefers empty space beside a known content rect; with only a point,
  * uses a conservative screen-aware offset (no OCR / invented text bounds).
  */

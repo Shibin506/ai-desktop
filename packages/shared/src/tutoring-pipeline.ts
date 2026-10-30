@@ -1,5 +1,5 @@
 /**
- * Pure contracts for Quicky.AI end-to-end tutoring handoffs (Part 4.0).
+ * Pure contracts for ScreenSensei end-to-end tutoring handoffs (Part 4.0).
  * These mirror renderer/orchestrator behavior without Electron or paid APIs.
  */
 

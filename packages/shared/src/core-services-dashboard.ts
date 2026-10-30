@@ -1,5 +1,5 @@
 /**
- * Presentation helpers for the Quicky.AI Core Services dashboard (Part 6.7.2).
+ * Presentation helpers for the ScreenSensei Core Services dashboard (Part 6.7.2).
  *
  * Maps sponsor-registry payloads into a demo-friendly operational overview.
  * Does not invent connectivity — labels follow live SponsorIntegration status.

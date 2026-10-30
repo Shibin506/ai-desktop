@@ -1,4 +1,4 @@
-/** Shared geometry helpers for Quicky.AI launcher menu + drag (pure, testable). */
+/** Shared geometry helpers for ScreenSensei launcher menu + drag (pure, testable). */
 
 export const DRAG_THRESHOLD_PX = 7;
 export const ITEM_DIAMETER = 48;
@@ -149,7 +149,7 @@ export function launcherScreenCenter(
   };
 }
 
-/** Matches `.quicke-canvas-sheet` defaults (min-width + two action rows). */
+/** Matches `.sensei-canvas-sheet` defaults (min-width + two action rows). */
 export const CANVAS_SHEET_DEFAULT_SIZE = { width: 188, height: 112 } as const;
 /** CSS `bottom: 48px` — gap from launcher center to sheet bottom edge. */
 export const CANVAS_SHEET_GAP = 48;

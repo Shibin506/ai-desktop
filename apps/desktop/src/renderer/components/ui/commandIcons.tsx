@@ -1,4 +1,4 @@
-/** Minimal graphite SVG icons for the Quicky.AI command menu (no icon package). */
+/** Minimal graphite SVG icons for the ScreenSensei command menu (no icon package). */
 
 export function MicIcon() {
   return (

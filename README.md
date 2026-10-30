@@ -1,5 +1,5 @@
 
-<h1 align="center">Quicky.AI</h1>
+<h1 align="center">ScreenSensei</h1>
 
 <p align="center"><b>A tutor that sits on your screen, points at what matters, draws on it, and talks you through it.</b></p>
 
@@ -11,7 +11,7 @@
 
 ## What it does
 
-Put anything on your screen — a math problem, a chess position, an app you're stuck in, a page in another language — and ask Quicky.AI about it by voice or text. It looks at your screen and teaches you **right there**:
+Put anything on your screen — a math problem, a chess position, an app you're stuck in, a page in another language — and ask ScreenSensei about it by voice or text. It looks at your screen and teaches you **right there**:
 
 - 🔵 **Points** at each thing as it talks about it, with a small cursor that never covers what it points at
 - ✍️ **Draws** hand-drawn marks on your screen — loops, arrows, boxes, underlines, keyboard shortcuts, word meanings — and **writes the working** beside the problem in handwriting. The working boards are laid out automatically in blank space (found by sampling the screenshot), so they never cover the diagram or each other
@@ -22,7 +22,7 @@ The voice starts about **3 seconds** after you ask, while the rest of the answer
 
 ### What you can learn
 
-| Subject | Ask something like | What Quicky.AI does |
+| Subject | Ask something like | What ScreenSensei does |
 |---|---|---|
 | **Math** | "Find x in this triangle." | Marks the sides and angles on your diagram, writes each line of working beside it, checks the answer |
 | **Chess** | "Teach me the trick in this position, then guide me through it move by move." | Reads the board (either orientation), names the pattern, draws move arrows and boxes squares, then waits for each of your moves |
@@ -56,7 +56,7 @@ Answers are **short and clear by default** (usually 4–8 steps). Ask for more a
 
 ### Voice input
 
-While you speak, your words appear live in the chat; Quicky.AI sends the question by itself after a short pause, and teaching starts as soon as the first step is ready. Speech recognition uses Cartesia Ink, and falls back to the system's speech recognition if Cartesia isn't available (for example, when its credits run out).
+While you speak, your words appear live in the chat; ScreenSensei sends the question by itself after a short pause, and teaching starts as soon as the first step is ready. Speech recognition uses Cartesia Ink, and falls back to the system's speech recognition if Cartesia isn't available (for example, when its credits run out).
 
 > **Demo Voice mode is currently ON.** For the hackathon demo, Voice skips the microphone: it shows "Listening…" for 3 seconds and then asks *"Explain me the problem on the screen."* Everything after that is real — the screenshot, Claude, the voice and the drawings — so it teaches whatever is actually on your screen. To use your own spoken questions, set `DEMO_VOICE_MODE = false` in [`packages/shared/src/demo-voice.ts`](packages/shared/src/demo-voice.ts).
 
@@ -66,11 +66,11 @@ Open [this position on Lichess](https://lichess.org/editor/4r2k/pp4pp/8/q5N1/2Q5
 
 > "Teach me the trick in this position so I can spot it in my own games, then guide me through it move by move."
 
-Quicky.AI names the pattern, gives you a checklist for spotting it, and guides **Nf7+ → Nh6+ → Qg8+!! → Nf7#**, checking each of your moves and explaining Black's forced replies.
+ScreenSensei names the pattern, gives you a checklist for spotting it, and guides **Nf7+ → Nh6+ → Qg8+!! → Nf7#**, checking each of your moves and explaining Black's forced replies.
 
 ### Guided lessons
 
-When a turn ends with something for you to do, a **"Your turn"** hint appears and the marks stay on screen. Then just do it — Quicky.AI notices your screen change and continues. You can also:
+When a turn ends with something for you to do, a **"Your turn"** hint appears and the marks stay on screen. Then just do it — ScreenSensei notices your screen change and continues. You can also:
 
 - say **"done"** or **"next"** (hold-to-talk; not while Demo Voice mode is on), or
 - open the chat panel and press **Next step** / **End lesson**.
@@ -175,7 +175,7 @@ Restart `pnpm dev` after editing `.env`.
 
 ## Accuracy tests
 
-Quicky.AI has an accuracy test set: **13 generated screenshots** where the correct targets are known exactly — math diagrams, a photo editor, chess positions (both orientations, guided turns, the smothered-mate demo) and Spanish and Japanese text. Each case is a real Claude call scored on whether it picked the right subject, pointed at the right places, kept voice and drawings aligned, and knew when to guide versus explain.
+ScreenSensei has an accuracy test set: **13 generated screenshots** where the correct targets are known exactly — math diagrams, a photo editor, chess positions (both orientations, guided turns, the smothered-mate demo) and Spanish and Japanese text. Each case is a real Claude call scored on whether it picked the right subject, pointed at the right places, kept voice and drawings aligned, and knew when to guide versus explain.
 
 ```bash
 pnpm --filter @screentutor/orchestrator eval            # all cases
@@ -242,6 +242,6 @@ More: [docs/privacy-and-safety.md](docs/privacy-and-safety.md).
 
 ## Team
 
-Quicky.AI was built by a team at Cal Hacks 13.0, with **Shibin Biji Thomas** as a team member.
+ScreenSensei was built by a team at Cal Hacks 13.0, with **Shibin Biji Thomas** as a team member.
 
 Original team repository: [CalHacks13.0](https://github.com/pgala3183/CalHacks13.0).

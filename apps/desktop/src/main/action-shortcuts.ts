@@ -1,16 +1,16 @@
 import { globalShortcut } from 'electron';
 import * as Sentry from '@sentry/node';
 import {
-  QUICKY_HOTKEY_CAPTURE,
-  QUICKY_HOTKEY_STOP_FALLBACK,
-  QUICKY_HOTKEY_TEXT,
-  QUICKY_HOTKEY_VOICE,
+  SENSEI_HOTKEY_CAPTURE,
+  SENSEI_HOTKEY_STOP_FALLBACK,
+  SENSEI_HOTKEY_TEXT,
+  SENSEI_HOTKEY_VOICE,
   hotkeyLabel,
-  type QuickyHotkeyAction,
+  type SenseiHotkeyAction,
 } from '@screentutor/shared';
 import { isMac } from './platform.js';
 
-export type ActionShortcutHandler = (action: QuickyHotkeyAction) => void;
+export type ActionShortcutHandler = (action: SenseiHotkeyAction) => void;
 
 const OWNED = new Set<string>();
 let actionHandler: ActionShortcutHandler | null = null;
@@ -67,10 +67,10 @@ export function registerActionShortcuts(onAction: ActionShortcutHandler): {
   const platform = platformKey();
 
   const registered = {
-    voice: tryRegister(QUICKY_HOTKEY_VOICE, () => actionHandler?.('voice')),
-    capture: tryRegister(QUICKY_HOTKEY_CAPTURE, () => actionHandler?.('capture')),
-    text: tryRegister(QUICKY_HOTKEY_TEXT, () => actionHandler?.('text')),
-    stopFallback: tryRegister(QUICKY_HOTKEY_STOP_FALLBACK, () => actionHandler?.('stop')),
+    voice: tryRegister(SENSEI_HOTKEY_VOICE, () => actionHandler?.('voice')),
+    capture: tryRegister(SENSEI_HOTKEY_CAPTURE, () => actionHandler?.('capture')),
+    text: tryRegister(SENSEI_HOTKEY_TEXT, () => actionHandler?.('text')),
+    stopFallback: tryRegister(SENSEI_HOTKEY_STOP_FALLBACK, () => actionHandler?.('stop')),
   };
 
   registeredOnce = true;
@@ -84,10 +84,10 @@ export function registerActionShortcuts(onAction: ActionShortcutHandler): {
     registered,
     escapeAvailable,
     labels: {
-      voice: hotkeyLabel(QUICKY_HOTKEY_VOICE, platform),
-      capture: hotkeyLabel(QUICKY_HOTKEY_CAPTURE, platform),
-      text: hotkeyLabel(QUICKY_HOTKEY_TEXT, platform),
-      stopFallback: hotkeyLabel(QUICKY_HOTKEY_STOP_FALLBACK, platform),
+      voice: hotkeyLabel(SENSEI_HOTKEY_VOICE, platform),
+      capture: hotkeyLabel(SENSEI_HOTKEY_CAPTURE, platform),
+      text: hotkeyLabel(SENSEI_HOTKEY_TEXT, platform),
+      stopFallback: hotkeyLabel(SENSEI_HOTKEY_STOP_FALLBACK, platform),
       escape: 'Esc',
     },
   };
@@ -121,7 +121,7 @@ export function setEscapeActivityActive(active: boolean): { escapeAvailable: boo
 
   if (!escapeAvailable) {
     console.warn(
-      `[Hotkeys] Escape unavailable globally — use in-app Esc or ${hotkeyLabel(QUICKY_HOTKEY_STOP_FALLBACK, platformKey())}`
+      `[Hotkeys] Escape unavailable globally — use in-app Esc or ${hotkeyLabel(SENSEI_HOTKEY_STOP_FALLBACK, platformKey())}`
     );
   } else {
     console.log(`[Hotkeys] Temporary Escape registered (${isMac ? 'macOS' : 'Windows/other'})`);

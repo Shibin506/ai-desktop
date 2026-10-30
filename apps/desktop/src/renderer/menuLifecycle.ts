@@ -1,5 +1,5 @@
 /**
- * Explicit menu transition phases for Quicky.AI floating launcher.
+ * Explicit menu transition phases for ScreenSensei floating launcher.
  * Keeps Electron window expansion/restoration ordered relative to Framer Motion.
  */
 

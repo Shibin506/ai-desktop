@@ -15,10 +15,10 @@ import {
   shouldHideChatForFirstStep,
   shouldFinalizeFromSilence,
   shouldRecoverFromNoSpeech,
-  QUICKY_HOTKEY_VOICE,
-  QUICKY_HOTKEY_CAPTURE,
-  QUICKY_HOTKEY_TEXT,
-  QUICKY_HOTKEY_STOP_FALLBACK,
+  SENSEI_HOTKEY_VOICE,
+  SENSEI_HOTKEY_CAPTURE,
+  SENSEI_HOTKEY_TEXT,
+  SENSEI_HOTKEY_STOP_FALLBACK,
 } from '@screentutor/shared';
 
 describe('voice-interaction', () => {
@@ -195,13 +195,13 @@ describe('voice-interaction', () => {
   });
 
   it('maps accelerators for macOS and Windows labels', () => {
-    expect(hotkeyLabel(QUICKY_HOTKEY_VOICE, 'darwin')).toContain('Cmd');
-    expect(hotkeyLabel(QUICKY_HOTKEY_VOICE, 'darwin')).toContain('Option');
-    expect(hotkeyLabel(QUICKY_HOTKEY_VOICE, 'win32')).toContain('Ctrl');
-    expect(hotkeyLabel(QUICKY_HOTKEY_VOICE, 'win32')).toContain('Alt');
-    expect(QUICKY_HOTKEY_CAPTURE).toBe('CommandOrControl+Alt+2');
-    expect(QUICKY_HOTKEY_TEXT).toBe('CommandOrControl+Alt+3');
-    expect(QUICKY_HOTKEY_STOP_FALLBACK).toBe('CommandOrControl+Alt+0');
+    expect(hotkeyLabel(SENSEI_HOTKEY_VOICE, 'darwin')).toContain('Cmd');
+    expect(hotkeyLabel(SENSEI_HOTKEY_VOICE, 'darwin')).toContain('Option');
+    expect(hotkeyLabel(SENSEI_HOTKEY_VOICE, 'win32')).toContain('Ctrl');
+    expect(hotkeyLabel(SENSEI_HOTKEY_VOICE, 'win32')).toContain('Alt');
+    expect(SENSEI_HOTKEY_CAPTURE).toBe('CommandOrControl+Alt+2');
+    expect(SENSEI_HOTKEY_TEXT).toBe('CommandOrControl+Alt+3');
+    expect(SENSEI_HOTKEY_STOP_FALLBACK).toBe('CommandOrControl+Alt+0');
   });
 });
 

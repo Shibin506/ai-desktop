@@ -1,4 +1,4 @@
-import quickyLogo from '../assets/quicky-logo.png';
+import screenSenseiLogo from '../assets/screensensei-logo.png';
 import { PRODUCT_DISPLAY_NAME } from '@screentutor/shared';
 
 interface Props {
@@ -8,11 +8,11 @@ interface Props {
   decorative?: boolean;
 }
 
-/** Official Quicky.AI orbit mark (transparent PNG master copy). */
+/** Official ScreenSensei orbit mark (transparent PNG master copy). */
 export default function TutorCursorIcon({ size = 28, className, decorative = true }: Props) {
   return (
     <img
-      src={quickyLogo}
+      src={screenSenseiLogo}
       alt={decorative ? '' : PRODUCT_DISPLAY_NAME}
       width={size}
       height={size}

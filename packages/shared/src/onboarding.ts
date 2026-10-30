@@ -1,12 +1,12 @@
 /**
- * Quicky.AI first-launch onboarding — pure preference + gate helpers.
+ * ScreenSensei first-launch onboarding — pure preference + gate helpers.
  * Persistence key lives in renderer localStorage (same pattern as mute).
  */
 
-export const ONBOARDING_STORAGE_KEY = 'quicky_onboarding_v1' as const;
+export const ONBOARDING_STORAGE_KEY = 'screensensei_onboarding_v1' as const;
 
 /** Session-only: prevents duplicate auto-open across Vite HMR remounts. */
-export const ONBOARDING_SESSION_AUTO_KEY = 'quicky_onboarding_v1_session_auto' as const;
+export const ONBOARDING_SESSION_AUTO_KEY = 'screensensei_onboarding_v1_session_auto' as const;
 
 export const ONBOARDING_VERSION = 1 as const;
 

@@ -12,13 +12,13 @@ import {
 const REPO_ROOT = join(__dirname, '../../../../');
 const DESKTOP_ROOT = join(REPO_ROOT, 'apps/desktop');
 
-describe('Quicky.AI brand identity', () => {
+describe('ScreenSensei brand identity', () => {
   it('uses the exact official display name', () => {
-    expect(PRODUCT_DISPLAY_NAME).toBe('Quicky.AI');
-    expect(PRODUCT_BUNDLE_DISPLAY_NAME).toBe('Quicky.AI');
-    expect(PRODUCT_DISPLAY_NAME).not.toMatch(/Quicke|Quickie|QuickAI|Quicky AI/);
-    expect(minimizeProductLabel()).toBe('Minimize Quicky.AI');
-    expect(closeMenuProductLabel()).toBe('Close Quicky.AI menu');
+    expect(PRODUCT_DISPLAY_NAME).toBe('ScreenSensei');
+    expect(PRODUCT_BUNDLE_DISPLAY_NAME).toBe('ScreenSensei');
+    expect(PRODUCT_DISPLAY_NAME).not.toMatch(/Screen Sensei|ScreenTutor/);
+    expect(minimizeProductLabel()).toBe('Minimize ScreenSensei');
+    expect(closeMenuProductLabel()).toBe('Close ScreenSensei menu');
   });
 
   it('preserves legacy userData directory identity', () => {
@@ -26,7 +26,7 @@ describe('Quicky.AI brand identity', () => {
   });
 
   it('keeps the untouched master logo at the repo root', () => {
-    const master = join(REPO_ROOT, 'Quicky Logo.png');
+    const master = join(REPO_ROOT, 'ScreenSensei Logo.png');
     expect(existsSync(master)).toBe(true);
     expect(statSync(master).size).toBeGreaterThan(100_000);
     const buf = readFileSync(master);
@@ -38,7 +38,7 @@ describe('Quicky.AI brand identity', () => {
 
   it('ships renderer + native icon assets derived from the master', () => {
     const paths = [
-      join(DESKTOP_ROOT, 'src/renderer/assets/quicky-logo.png'),
+      join(DESKTOP_ROOT, 'src/renderer/assets/screensensei-logo.png'),
       join(DESKTOP_ROOT, 'build/icon.png'),
       join(DESKTOP_ROOT, 'build/icon-1024.png'),
       join(DESKTOP_ROOT, 'build/icon.icns'),
@@ -52,23 +52,22 @@ describe('Quicky.AI brand identity', () => {
 
   it('configures electron-builder productName and icons without renaming appId', () => {
     const yml = readFileSync(join(DESKTOP_ROOT, 'electron-builder.yml'), 'utf8');
-    expect(yml).toMatch(/productName:\s*Quicky\.AI/);
+    expect(yml).toMatch(/productName:\s*ScreenSensei/);
     expect(yml).toMatch(/appId:\s*ai\.screentutor\.desktop/);
     expect(yml).toMatch(/icon:\s*build\/icon\.icns/);
     expect(yml).toMatch(/icon:\s*build\/icon\.ico/);
-    expect(yml).toMatch(/Quicky\.AI listens while you hold the hotkey/);
-    expect(yml).toMatch(/Quicky\.AI captures your screen only when you ask/);
+    expect(yml).toMatch(/ScreenSensei listens while you hold the hotkey/);
+    expect(yml).toMatch(/ScreenSensei captures your screen only when you ask/);
     expect(yml).not.toMatch(/productName:\s*ScreenTutor/);
-    expect(yml).not.toMatch(/Quicke\.AI/);
   });
 
-  it('uses Quicky.AI in HTML document titles', () => {
+  it('uses ScreenSensei in HTML document titles', () => {
     const indexHtml = readFileSync(join(DESKTOP_ROOT, 'src/renderer/index.html'), 'utf8');
     const overlayHtml = readFileSync(join(DESKTOP_ROOT, 'src/renderer/overlay.html'), 'utf8');
-    expect(indexHtml).toContain('<title>Quicky.AI</title>');
-    expect(overlayHtml).toContain('<title>Quicky.AI Overlay</title>');
-    expect(indexHtml).not.toMatch(/ScreenTutor|Quicke\.AI/);
-    expect(overlayHtml).not.toMatch(/ScreenTutor|Quicke\.AI/);
+    expect(indexHtml).toContain('<title>ScreenSensei</title>');
+    expect(overlayHtml).toContain('<title>ScreenSensei Overlay</title>');
+    expect(indexHtml).not.toMatch(/ScreenTutor/);
+    expect(overlayHtml).not.toMatch(/ScreenTutor/);
   });
 
   it('locks userData path before setName in the Electron main entry', () => {

@@ -44,7 +44,7 @@ const CARDS = [
   {
     eyebrow: 'SEE',
     title: "See what's on your screen",
-    subtitle: "Bring Quicky.AI into your workflow and give it context from the problem you're working on.",
+    subtitle: "Bring ScreenSensei into your workflow and give it context from the problem you're working on.",
     Icon: SeeIcon,
   },
   {
@@ -101,7 +101,7 @@ export default function WelcomeOnboarding({ onGetStarted, onDismiss, openedFromH
 
         <div className="welcome-onboarding__hero">
           <h1 id={titleId} className="welcome-onboarding__title">
-            Meet Quicky.AI
+            Meet ScreenSensei
           </h1>
           <p className="welcome-onboarding__subtitle">
             Your personal AI tutor, available anywhere on your desktop.
@@ -127,7 +127,7 @@ export default function WelcomeOnboarding({ onGetStarted, onDismiss, openedFromH
           <p className="welcome-onboarding__perms-title">Permissions when you need them</p>
           <ul className="welcome-onboarding__perms-list">
             <li>
-              <strong>Screen access</strong> — Used when you ask Quicky.AI to understand something on
+              <strong>Screen access</strong> — Used when you ask ScreenSensei to understand something on
               your screen.
             </li>
             <li>

@@ -231,16 +231,16 @@ export default function App() {
     const host = window.location?.hostname;
     const isDevRenderer = host === 'localhost' || host === '127.0.0.1';
     if (!isDevRenderer) return;
-    const w = window as Window & { __quickyResetOnboarding?: () => void };
-    w.__quickyResetOnboarding = () => {
+    const w = window as Window & { __screensenseiResetOnboarding?: () => void };
+    w.__screensenseiResetOnboarding = () => {
       resetOnboardingPreference();
       setOnboardingStatus('never');
       console.info(
-        '[Quicky.AI] Onboarding keys only were reset (mute and other prefs preserved). Reload to see welcome.'
+        '[ScreenSensei] Onboarding keys only were reset (mute and other prefs preserved). Reload to see welcome.'
       );
     };
     return () => {
-      delete w.__quickyResetOnboarding;
+      delete w.__screensenseiResetOnboarding;
     };
   }, []);
 
@@ -339,7 +339,7 @@ export default function App() {
         setPanelOrigin(`${Math.round(ox)}px ${Math.round(oy)}px`);
       }
       if (process.env.NODE_ENV !== 'production' && placed?.bounds) {
-        console.info('[Quicky.AI][chat-open]', {
+        console.info('[ScreenSensei][chat-open]', {
           bounds: placed.bounds,
           expected: { width: PANEL_WIDTH, height: PANEL_HEIGHT },
         });
@@ -412,7 +412,7 @@ export default function App() {
     setWelcomeFromHelp(fromHelp);
     setPanelView('welcome');
     panelViewRef.current = 'welcome';
-    console.info(`[Quicky.AI] Welcome onboarding (${fromHelp ? 'help' : 'first-launch'})`);
+    console.info(`[ScreenSensei] Welcome onboarding (${fromHelp ? 'help' : 'first-launch'})`);
     if (!isPanelExpandedRef.current) {
       await expandPanel();
     }
@@ -587,7 +587,7 @@ export default function App() {
     setIsScanning(true);
     setVoicePreviewHint('Capturing your screen…');
 
-    // Hide Chat before capture so the screenshot is the user's problem, not Quicky.
+    // Hide Chat before capture so the screenshot is the user's problem, not ScreenSensei.
     if (isPanelExpandedRef.current) {
       await collapsePanel();
     } else {
@@ -826,7 +826,7 @@ export default function App() {
       voiceDraftRevisionRef.current = 0;
       setQuestion('');
       setVoicePreviewHint(demoVoiceListenLabel(true));
-      // Keep Chat closed during demo listen so capture is not covered by Quicky.
+      // Keep Chat closed during demo listen so capture is not covered by ScreenSensei.
       window.electronAPI.setDictationGlow(false);
       voiceSessionRef.current = 'active';
       console.info('[DemoVoice] listening', { sessionId, ms: DEMO_VOICE_DURATION_MS });
@@ -857,7 +857,7 @@ export default function App() {
           ? await window.electronAPI.ensureMicrophoneAccess()
           : await window.electronAPI.getPermissionStatus();
       if (status.microphone === 'denied' || status.microphone === 'restricted') {
-        console.warn('[Quicky.AI] Microphone permission denied — voice not started');
+        console.warn('[ScreenSensei] Microphone permission denied — voice not started');
         abandon();
         setBuddyState('error');
         return;

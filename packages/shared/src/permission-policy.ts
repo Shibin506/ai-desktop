@@ -1,5 +1,5 @@
 /**
- * Pure policy helpers for Quicky.AI media permission timing.
+ * Pure policy helpers for ScreenSensei media permission timing.
  * OS prompts must follow deliberate user actions — never startup/onboarding.
  */
 

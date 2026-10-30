@@ -1,4 +1,4 @@
-/** Neutral line icons for the Quicky.AI tutor panel toolbar/composer (no icon package). */
+/** Neutral line icons for the ScreenSensei tutor panel toolbar/composer (no icon package). */
 
 import type { ReactNode } from 'react';
 

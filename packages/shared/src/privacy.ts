@@ -1,5 +1,5 @@
 /**
- * Canonical privacy denylist for Quicky.AI.
+ * Canonical privacy denylist for ScreenSensei.
  *
  * If an active window title contains any of these terms (case-insensitive),
  * screenshot capture, Claude calls, Browserbase, Simular actions, and memory
