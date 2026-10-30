@@ -245,6 +245,6 @@ More: [docs/privacy-and-safety.md](docs/privacy-and-safety.md).
 
 ## Team
 
-Built at Cal Hacks 13.0 by **Pratham Gala**, **Manav Patel**, **Dev Mulchandani**, **Jay Vithlani** and **Shibin Biji Thomas**.
+Quicky.AI was built by a team at Cal Hacks 13.0, with **Shibin Biji Thomas** as a team member.
 
-Original repository: [pgala3183/CalHacks13.0](https://github.com/pgala3183/CalHacks13.0). This repository is Shibin Biji Thomas's copy of the team project.
+Original team repository: [CalHacks13.0](https://github.com/pgala3183/CalHacks13.0).
